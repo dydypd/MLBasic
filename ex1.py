@@ -6,11 +6,11 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 # Xử lý loại bỏ các line dữ liệu thừa
 from sklearn.naive_bayes import GaussianNB
 
-with open('datacum.txt', 'r') as oFile, open('rawData.csv', 'w') as nFile:
+with open('ex1Data/datacum.txt', 'r') as oFile, open('ex1Data/rawData.csv', 'w') as nFile:
     for line in oFile:
         if not line.startswith('#') and not line.startswith('\n'):
             nFile.write(line)
-data = pd.read_csv('rawData.csv', header=None)
+data = pd.read_csv('ex1Data/rawData.csv', header=None)
 #chọn mẫu test
 uBenign = data[data[1] == 2]  # u lành tính
 uMalignant = data[data[1] == 4]  # u ác tính
